@@ -1,0 +1,224 @@
+@import "../../app.scss";
+
+.ai-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: #050012;
+
+  /* ── PHOTO WRAP: far layer, moves least with mouse ── */
+  .photo-wrap {
+    position: absolute;
+    inset: -5%;          /* slightly oversized so mouse-pan never shows edge */
+    width: 110%;
+    height: 110%;
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+
+  /* Each real AI photo */
+  .ai-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    animation: photoFade 36s ease-in-out infinite;
+    filter: saturate(1.4) contrast(1.1) brightness(0.9);
+
+    /* Each image fades in turn */
+    &:nth-child(2) { animation-delay: 12s; }
+    &:nth-child(3) { animation-delay: 24s; }
+  }
+
+  /* ── OVERLAYS (fixed, don't parallax) ── */
+  .deep-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      160deg,
+      rgba(5, 0, 18, 0.60) 0%,
+      rgba(5, 0, 18, 0.42) 50%,
+      rgba(5, 0, 18, 0.60) 100%
+    );
+    z-index: 1;
+  }
+
+  .tint-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.20) 0%,
+      rgba(6,  182, 212, 0.14) 60%,
+      rgba(236, 72, 153, 0.10) 100%
+    );
+    z-index: 2;
+  }
+
+  /* ── 3D RINGS: floating tilted orbit ellipses ── */
+  .rings-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+
+  .ring-3d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    border: 1.5px solid;
+    transform-style: preserve-3d;
+
+    &.ring-a {
+      width: 700px; height: 700px;
+      margin: -350px 0 0 -350px;
+      border-color: rgba(124, 58, 237, 0.35);
+      animation: spin3d-a 22s linear infinite;
+      box-shadow: 0 0 20px rgba(124, 58, 237, 0.15) inset;
+    }
+    &.ring-b {
+      width: 540px; height: 540px;
+      margin: -270px 0 0 -270px;
+      border-color: rgba(6, 182, 212, 0.3);
+      animation: spin3d-b 16s linear infinite;
+      box-shadow: 0 0 16px rgba(6, 182, 212, 0.12) inset;
+    }
+    &.ring-c {
+      width: 380px; height: 380px;
+      margin: -190px 0 0 -190px;
+      border-color: rgba(236, 72, 153, 0.28);
+      animation: spin3d-c 12s linear infinite;
+    }
+    &.ring-d {
+      width: 900px; height: 900px;
+      margin: -450px 0 0 -450px;
+      border-color: rgba(124, 58, 237, 0.18);
+      border-style: dashed;
+      animation: spin3d-a 35s linear infinite reverse;
+    }
+  }
+
+  /* ── SVG WRAP: mid layer ── */
+  .svg-wrap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+
+  .brain-svg {
+    width: min(92vw, 920px);
+    height: min(92vw, 920px);
+    opacity: 1;
+
+    @include mobile {
+      width: 110vw;
+      height: 110vw;
+      opacity: 0.75;
+    }
+
+    .orbit-ring   { transform-origin: 450px 450px; }
+    .ring-slow    { animation: orbitSpin 40s linear infinite; }
+    .ring-med     { animation: orbitSpin 25s linear infinite reverse; }
+    .ring-fast    { animation: orbitSpin 15s linear infinite; }
+    .pulse-node   { animation: nodePulse 2.5s ease-in-out infinite; }
+    .nd2 { animation-delay: 0.5s; }
+    .nd3 { animation-delay: 1s;   }
+    .nd4 { animation-delay: 1.5s; }
+    .nd5 { animation-delay: 2s;   }
+    .core-ring    { animation: coreExpand 3s ease-in-out infinite alternate; }
+    .core-med     { animation: coreExpand 3s ease-in-out infinite alternate-reverse; }
+    .core-pulse   { animation: corePulse  1.8s ease-in-out infinite; }
+  }
+
+  /* ── HEX CORNERS: closest layer, moves most ── */
+  .hex-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+
+  .hex-corner {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    opacity: 0.85;
+
+    @include mobile { width: 130px; height: 130px; }
+
+    &.top-left  { top: 0;    left: 0;  }
+    &.top-right { top: 0;    right: 0; transform: scaleX(-1); }
+    &.bot-left  { bottom: 0; left: 0;  transform: scaleY(-1); }
+    &.bot-right { bottom: 0; right: 0; transform: scale(-1);  }
+  }
+
+  /* ── Scan lines ── */
+  .scan-lines {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.04) 3px,
+      rgba(0, 0, 0, 0.04) 4px
+    );
+    pointer-events: none;
+    z-index: 6;
+  }
+}
+
+/* ══ Keyframes ══ */
+
+/* Photo crossfade — 3 images × 12s = 36s cycle */
+@keyframes photoFade {
+  0%        { opacity: 0; }
+  6%        { opacity: 0.65; }
+  28%       { opacity: 0.65; }
+  33%, 100% { opacity: 0; }
+}
+
+/* 3D orbit ring spins — perspective tilt makes them look like real 3D ellipses */
+@keyframes spin3d-a {
+  from { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(0deg); }
+  to   { transform: translate(-50%, -50%) rotateX(72deg) rotateZ(360deg); }
+}
+@keyframes spin3d-b {
+  from { transform: translate(-50%, -50%) rotateX(60deg) rotateZ(0deg) rotateY(20deg); }
+  to   { transform: translate(-50%, -50%) rotateX(60deg) rotateZ(360deg) rotateY(20deg); }
+}
+@keyframes spin3d-c {
+  from { transform: translate(-50%, -50%) rotateX(80deg) rotateZ(0deg) rotateY(-15deg); }
+  to   { transform: translate(-50%, -50%) rotateX(80deg) rotateZ(360deg) rotateY(-15deg); }
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes nodePulse {
+  0%, 100% { opacity: 0.95; }
+  50%       { opacity: 0.35; }
+}
+@keyframes coreExpand {
+  0%   { opacity: 0.65; }
+  100% { opacity: 1; }
+}
+@keyframes corePulse {
+  0%, 100% { opacity: 1;   }
+  50%       { opacity: 0.4; }
+}

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0d0d0d"/>
+  <defs>
+    <radialGradient id="glow-seek" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#glow-seek)"/>
+
+  <!-- Stage 1: Social Sources -->
+  <rect x="18" y="90" width="118" height="160" rx="10" fill="#082f49" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="77" y="115" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="11" font-weight="bold">SOURCES</text>
+  <text x="77" y="138" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="10">LinkedIn</text>
+  <text x="77" y="156" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="10">Twitter / X</text>
+  <text x="77" y="174" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="10">Instagram</text>
+  <text x="77" y="192" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="10">Web Crawl</text>
+  <text x="77" y="213" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Playwright</text>
+  <text x="77" y="228" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Stealth Mode</text>
+
+  <!-- Arrow -->
+  <line x1="136" y1="170" x2="162" y2="170" stroke="#06b6d4" stroke-width="2"/>
+  <polygon points="162,163 177,170 162,177" fill="#06b6d4"/>
+
+  <!-- Stage 2: Azure Service Bus -->
+  <rect x="177" y="120" width="118" height="100" rx="10" fill="#082f49" stroke="#22d3ee" stroke-width="1.5"/>
+  <text x="236" y="146" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="10" font-weight="bold">AZURE</text>
+  <text x="236" y="162" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="10" font-weight="bold">SERVICE BUS</text>
+  <text x="236" y="185" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Async Queue</text>
+  <text x="236" y="202" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Job Dispatch</text>
+
+  <!-- Arrow -->
+  <line x1="295" y1="170" x2="321" y2="170" stroke="#06b6d4" stroke-width="2"/>
+  <polygon points="321,163 336,170 321,177" fill="#06b6d4"/>
+
+  <!-- Stage 3: Container App -->
+  <rect x="336" y="100" width="128" height="140" rx="10" fill="#082f49" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="400" y="126" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="10" font-weight="bold">CONTAINER APP</text>
+  <text x="400" y="148" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Scrape / Crawl</text>
+  <text x="400" y="165" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Blob Storage</text>
+  <text x="400" y="182" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">LLM Summary</text>
+  <text x="400" y="199" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Vector Embed</text>
+  <text x="400" y="218" text-anchor="middle" fill="#164e63" font-family="monospace" font-size="8">Azure Blob Storage</text>
+
+  <!-- Arrow -->
+  <line x1="464" y1="170" x2="492" y2="170" stroke="#06b6d4" stroke-width="2"/>
+  <polygon points="492,163 507,170 492,177" fill="#06b6d4"/>
+
+  <!-- Stage 4: Azure AI -->
+  <rect x="507" y="88" width="130" height="164" rx="10" fill="#082f49" stroke="#67e8f9" stroke-width="1.5"/>
+  <text x="572" y="113" text-anchor="middle" fill="#67e8f9" font-family="monospace" font-size="10" font-weight="bold">AZURE AI</text>
+  <text x="572" y="135" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="9">Cognitive Search</text>
+  <text x="572" y="152" text-anchor="middle" fill="#22d3ee" font-family="monospace" font-size="9">Vector Index</text>
+  <text x="572" y="173" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Azure OpenAI</text>
+  <text x="572" y="190" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">RAG Pipeline</text>
+  <text x="572" y="208" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Redis Pub/Sub</text>
+  <text x="572" y="226" text-anchor="middle" fill="#164e63" font-family="monospace" font-size="8">GPT-4o · Streaming</text>
+
+  <!-- Arrow -->
+  <line x1="637" y1="170" x2="657" y2="170" stroke="#06b6d4" stroke-width="2"/>
+  <polygon points="657,163 672,170 657,177" fill="#06b6d4"/>
+
+  <!-- Stage 5: React UI -->
+  <rect x="672" y="100" width="112" height="140" rx="10" fill="#082f49" stroke="#06b6d4" stroke-width="1.5"/>
+  <text x="728" y="124" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="10" font-weight="bold">REACT UI</text>
+  <text x="728" y="146" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Real-time Chat</text>
+  <text x="728" y="163" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">WebSocket</text>
+  <text x="728" y="180" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Voice Input</text>
+  <text x="728" y="197" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Knowledge Base</text>
+  <text x="728" y="214" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="9">Admin Dashboard</text>
+
+  <!-- FastAPI backbone bar -->
+  <rect x="177" y="295" width="507" height="38" rx="8" fill="#082f49" stroke="#06b6d4" stroke-width="1" opacity="0.75"/>
+  <text x="430" y="319" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="11">FastAPI · JWT Auth · MongoDB · WebSockets · 6 Submodules</text>
+
+  <!-- Dashed verticals -->
+  <line x1="236" y1="268" x2="236" y2="295" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+  <line x1="400" y1="278" x2="400" y2="295" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+  <line x1="572" y1="285" x2="572" y2="295" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+  <line x1="700" y1="278" x2="700" y2="295" stroke="#06b6d4" stroke-width="1" stroke-dasharray="4,4" opacity="0.4"/>
+
+  <text x="400" y="385" text-anchor="middle" fill="#06b6d4" font-family="monospace" font-size="15" opacity="0.9">SEEK · AI-Powered Web Intelligence Platform</text>
+  <text x="400" y="412" text-anchor="middle" fill="#0891b2" font-family="monospace" font-size="10" opacity="0.7">FastAPI · React 18 · Azure OpenAI · Cognitive Search · Service Bus · MongoDB · Redis · WebSockets</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0d0d0d"/>
+  <defs>
+    <radialGradient id="glow-aq" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#glow-aq)"/>
+
+  <!-- Stage 1: Resume Upload -->
+  <rect x="18" y="100" width="128" height="160" rx="10" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+  <text x="82" y="125" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="11" font-weight="bold">CANDIDATE</text>
+  <text x="82" y="148" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Resume Upload</text>
+  <text x="82" y="165" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">PDF Parsing</text>
+  <text x="82" y="182" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Skill Extraction</text>
+  <!-- Resume icon -->
+  <rect x="38" y="198" width="88" height="8" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="38" y="212" width="70" height="8" rx="2" fill="#10b981" opacity="0.25"/>
+  <rect x="38" y="226" width="80" height="8" rx="2" fill="#10b981" opacity="0.3"/>
+  <text x="82" y="248" text-anchor="middle" fill="#059669" font-family="monospace" font-size="8">JWT Auth</text>
+
+  <!-- Arrow -->
+  <line x1="146" y1="180" x2="174" y2="180" stroke="#10b981" stroke-width="2"/>
+  <polygon points="174,173 189,180 174,187" fill="#10b981"/>
+
+  <!-- Stage 2: AI Engine -->
+  <rect x="189" y="80" width="148" height="220" rx="10" fill="#022c22" stroke="#34d399" stroke-width="1.5"/>
+  <text x="263" y="107" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="11" font-weight="bold">AI ENGINE</text>
+  <rect x="204" y="118" width="118" height="28" rx="5" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+  <text x="263" y="137" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="9">Question Generation</text>
+  <line x1="263" y1="146" x2="263" y2="156" stroke="#34d399" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="204" y="156" width="118" height="28" rx="5" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+  <text x="263" y="175" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="9">Adaptive Difficulty</text>
+  <line x1="263" y1="184" x2="263" y2="194" stroke="#34d399" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="204" y="194" width="118" height="28" rx="5" fill="#022c22" stroke="#10b981" stroke-width="1"/>
+  <text x="263" y="213" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="9">Answer Scoring</text>
+  <line x1="263" y1="222" x2="263" y2="232" stroke="#34d399" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="204" y="232" width="118" height="28" rx="5" fill="#022c22" stroke="#34d399" stroke-width="1"/>
+  <text x="263" y="251" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Multi-session Engine</text>
+  <text x="263" y="283" text-anchor="middle" fill="#064e3b" font-family="monospace" font-size="8">AI APIs · PostgreSQL</text>
+
+  <!-- Arrow -->
+  <line x1="337" y1="185" x2="367" y2="185" stroke="#10b981" stroke-width="2"/>
+  <polygon points="367,178 382,185 367,192" fill="#10b981"/>
+
+  <!-- Stage 3: Interview UI + Proctoring -->
+  <rect x="382" y="88" width="148" height="210" rx="10" fill="#022c22" stroke="#10b981" stroke-width="1.5"/>
+  <text x="456" y="113" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="11" font-weight="bold">INTERVIEW</text>
+  <!-- Camera icon -->
+  <rect x="416" y="124" width="80" height="50" rx="6" fill="#022c22" stroke="#34d399" stroke-width="1"/>
+  <circle cx="456" cy="149" r="14" fill="none" stroke="#34d399" stroke-width="1.5"/>
+  <circle cx="456" cy="149" r="7" fill="#34d399" opacity="0.5"/>
+  <text x="456" y="188" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="8">Live Proctoring</text>
+  <text x="456" y="206" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Violation Detection</text>
+  <text x="456" y="223" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Tab Switch Alert</text>
+  <text x="456" y="240" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Face Detection</text>
+  <text x="456" y="265" text-anchor="middle" fill="#059669" font-family="monospace" font-size="8">WebSockets · JWT</text>
+  <text x="456" y="280" text-anchor="middle" fill="#059669" font-family="monospace" font-size="8">Role-based Access</text>
+
+  <!-- Arrow -->
+  <line x1="530" y1="185" x2="560" y2="185" stroke="#10b981" stroke-width="2"/>
+  <polygon points="560,178 575,185 560,192" fill="#10b981"/>
+
+  <!-- Stage 4: Admin Dashboard -->
+  <rect x="575" y="95" width="210" height="200" rx="10" fill="#022c22" stroke="#6ee7b7" stroke-width="1.5"/>
+  <text x="680" y="120" text-anchor="middle" fill="#6ee7b7" font-family="monospace" font-size="11" font-weight="bold">ADMIN DASHBOARD</text>
+  <!-- Dashboard chart bars -->
+  <rect x="595" y="200" width="20" height="60" rx="3" fill="#10b981" opacity="0.5"/>
+  <rect x="622" y="180" width="20" height="80" rx="3" fill="#10b981" opacity="0.7"/>
+  <rect x="649" y="195" width="20" height="65" rx="3" fill="#10b981" opacity="0.6"/>
+  <rect x="676" y="175" width="20" height="85" rx="3" fill="#34d399" opacity="0.8"/>
+  <rect x="703" y="190" width="20" height="70" rx="3" fill="#10b981" opacity="0.5"/>
+  <rect x="730" y="170" width="20" height="90" rx="3" fill="#6ee7b7" opacity="0.9"/>
+  <!-- Labels -->
+  <text x="680" y="145" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Real-time Analytics</text>
+  <text x="680" y="162" text-anchor="middle" fill="#34d399" font-family="monospace" font-size="9">Candidate Reports</text>
+  <text x="680" y="275" text-anchor="middle" fill="#059669" font-family="monospace" font-size="9">PDF Export · WebSockets</text>
+
+  <text x="400" y="385" text-anchor="middle" fill="#10b981" font-family="monospace" font-size="15" opacity="0.9">AssessQ · AI-Powered Technical Assessment Platform</text>
+  <text x="400" y="413" text-anchor="middle" fill="#059669" font-family="monospace" font-size="10" opacity="0.7">React 18 · TypeScript · FastAPI · WebSockets · PostgreSQL · JWT · AI APIs</text>
+</svg>

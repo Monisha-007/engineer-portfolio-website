@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0d0d0d"/>
+  <defs>
+    <radialGradient id="glow4" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#glow4)"/>
+  <!-- Pipeline stages -->
+  <!-- Code -->
+  <rect x="40" y="175" width="110" height="100" rx="10" fill="#1a1000" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="95" y="215" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="12" font-weight="bold">CODE</text>
+  <text x="95" y="232" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="10">Git Push</text>
+  <text x="95" y="248" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">GitHub/BB</text>
+  <!-- Arrow -->
+  <line x1="150" y1="225" x2="180" y2="225" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="180,218 195,225 180,232" fill="#f59e0b"/>
+  <!-- Build -->
+  <rect x="195" y="175" width="110" height="100" rx="10" fill="#1a1000" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="250" y="215" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold">BUILD</text>
+  <text x="250" y="232" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="10">Docker</text>
+  <text x="250" y="248" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Jenkins/GHA</text>
+  <!-- Arrow -->
+  <line x1="305" y1="225" x2="335" y2="225" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="335,218 350,225 335,232" fill="#f59e0b"/>
+  <!-- Test -->
+  <rect x="350" y="175" width="110" height="100" rx="10" fill="#1a1000" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="405" y="215" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="12" font-weight="bold">TEST</text>
+  <text x="405" y="232" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="10">Automated</text>
+  <text x="405" y="248" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">OWASP ZAP</text>
+  <!-- Arrow -->
+  <line x1="460" y1="225" x2="490" y2="225" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="490,218 505,225 490,232" fill="#f59e0b"/>
+  <!-- Deploy -->
+  <rect x="505" y="175" width="110" height="100" rx="10" fill="#1a1000" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="560" y="215" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="12" font-weight="bold">DEPLOY</text>
+  <text x="560" y="232" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="10">Terraform</text>
+  <text x="560" y="248" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Ansible/K8s</text>
+  <!-- Arrow -->
+  <line x1="615" y1="225" x2="645" y2="225" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="645,218 660,225 645,232" fill="#f59e0b"/>
+  <!-- Monitor -->
+  <rect x="660" y="175" width="110" height="100" rx="10" fill="#1a1000" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="715" y="215" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="12" font-weight="bold">MONITOR</text>
+  <text x="715" y="232" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="10">Prometheus</text>
+  <text x="715" y="248" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Grafana</text>
+  <!-- Stage labels -->
+  <text x="95" y="165" text-anchor="middle" fill="#78350f" font-family="monospace" font-size="10">①</text>
+  <text x="250" y="165" text-anchor="middle" fill="#78350f" font-family="monospace" font-size="10">②</text>
+  <text x="405" y="165" text-anchor="middle" fill="#78350f" font-family="monospace" font-size="10">③</text>
+  <text x="560" y="165" text-anchor="middle" fill="#78350f" font-family="monospace" font-size="10">④</text>
+  <text x="715" y="165" text-anchor="middle" fill="#78350f" font-family="monospace" font-size="10">⑤</text>
+  <!-- Environments bar -->
+  <rect x="195" y="310" width="420" height="28" rx="6" fill="#1a1000" stroke="#f59e0b" stroke-width="1" opacity="0.6"/>
+  <text x="405" y="330" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="11" opacity="0.8">DEV → STAGING → PRODUCTION</text>
+  <text x="400" y="400" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="16" opacity="0.8">Containerized CI/CD Pipelines</text>
+  <text x="400" y="425" text-anchor="middle" fill="#b45309" font-family="monospace" font-size="11" opacity="0.6">Jenkins · GitHub Actions · Docker · Terraform · Ansible</text>
+</svg>

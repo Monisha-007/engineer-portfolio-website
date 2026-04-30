@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="16" fill="#336791"/>
+  <!-- Head -->
+  <ellipse cx="52" cy="46" rx="22" ry="22" fill="white" opacity="0.92"/>
+  <!-- Left ear -->
+  <ellipse cx="32" cy="31" rx="10" ry="14" fill="white" opacity="0.92"/>
+  <ellipse cx="32" cy="31" rx="6" ry="9" fill="#336791" opacity="0.4"/>
+  <!-- Right ear -->
+  <ellipse cx="72" cy="31" rx="10" ry="14" fill="white" opacity="0.92"/>
+  <ellipse cx="72" cy="31" rx="6" ry="9" fill="#336791" opacity="0.4"/>
+  <!-- Eyes -->
+  <circle cx="44" cy="44" r="4" fill="#336791"/>
+  <circle cx="60" cy="44" r="4" fill="#336791"/>
+  <!-- Nose highlight -->
+  <ellipse cx="52" cy="58" rx="8" ry="4" fill="#336791" opacity="0.15"/>
+  <!-- Trunk -->
+  <path d="M44 66 Q32 76 36 88" stroke="white" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

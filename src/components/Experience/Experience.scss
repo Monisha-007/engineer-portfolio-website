@@ -1,0 +1,247 @@
+@import "../../app.scss";
+
+.education {
+  background: rgba(5, 0, 18, 0.70);
+  height: 100vh;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include tablet {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding: 40px 0 60px;
+  }
+
+  @include mobile {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding: 40px 0 60px;
+  }
+
+  h1 {
+    flex-shrink: 0;
+    font-size: 50px;
+    background: linear-gradient(135deg, #a78bfa, #67e8f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 24px 0 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+
+    @include mobile {
+      font-size: 36px;
+      margin: 10px 0;
+    }
+  }
+
+  /* Timeline takes ALL remaining height after h1 — this is the key fix.
+     SVG centered at 50% of THIS height = truly centered on screen. */
+  .education-timeline {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    min-height: 0;
+
+    @include mobile {
+      height: auto;
+      flex: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 8px 16px 0 34px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 18px;
+        top: 14px;
+        bottom: 14px;
+        border-left: 2px dashed rgba(255, 165, 0, 0.55);
+      }
+    }
+  }
+
+  /* SVG wave — centered within the timeline flex area */
+  .svg-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: reveal 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    will-change: clip-path;
+    z-index: 1;
+    pointer-events: none;
+
+    svg {
+      width: min(92vw, 1200px);
+      height: auto;
+      display: block;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    @include tablet {
+      transform: translate(-125%, -50%) rotate(90deg);
+      scale: 0.5;
+    }
+  }
+
+  .education-point {
+    position: absolute;
+    width: min(40%, 600px);
+    z-index: 2;
+
+    .experience-card {
+      width: 100%;
+      background: transparent;
+    }
+
+    @include mobile {
+      width: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -24px;
+        top: 26px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #ffa500;
+        box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2);
+        z-index: 3;
+        animation: timelineDotPulse 1.8s ease-in-out infinite;
+      }
+    }
+
+    /* Card 1 — upper left.
+       bottom: calc(50% + 80px) anchors card bottom 80px above the timeline centre.
+       Left SVG dot sits at ~50% - 46px so card clears it by 34px.
+       No top constraint — card grows upward freely, h1 is a separate flex item above. */
+    &.point1 {
+      bottom: calc(50% + 96px);
+      top: auto;
+      left: 5%;
+
+      @include tablet {
+        width: 38%;
+        bottom: calc(50% + 72px);
+        left: 4%;
+      }
+
+      @include mobile {
+        bottom: auto;
+        top: auto;
+        left: auto;
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+    }
+
+    /* Card 2 — lower right.
+       top: calc(50% + 12px) starts card 12px below timeline centre.
+       Right SVG dot sits at ~50% - 7px so card starts ~19px below it. */
+    &.point2 {
+      top: calc(50% + 92px);
+      right: 9%;
+      left: auto;
+
+      @include tablet {
+        width: 38%;
+        top: calc(50% + 72px);
+        right: 8%;
+        left: auto;
+      }
+
+      @include mobile {
+        top: auto;
+        right: auto;
+        left: auto;
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+    }
+
+    .date-location {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+      gap: 8px;
+      margin-bottom: 2px;
+
+      @include mobile {
+        font-size: 13px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+
+      .date {
+        color: white;
+        opacity: 0.4;
+
+        @include mobile { font-size: 12px; }
+      }
+
+      .location {
+        color: white;
+        opacity: 0.5;
+      }
+    }
+
+    .title {
+      font-size: 22px;
+      color: white;
+      margin: 8px 0 6px;
+      line-height: 1.25;
+
+      @include mobile {
+        font-size: 17px;
+        line-height: 1.3;
+        margin: 8px 0 6px;
+      }
+    }
+
+    .description {
+      color: rgb(255, 255, 255);
+      opacity: 0.6;
+      font-size: 13px;
+      line-height: 1.4;
+      margin-bottom: 2px;
+
+      @include mobile {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+@keyframes timelineDotPulse {
+  0%   { transform: scale(1);   box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2); }
+  50%  { transform: scale(1.2); box-shadow: 0 0 0 6px rgba(255, 165, 0, 0.12); }
+  100% { transform: scale(1);   box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.2); }
+}
+
+@keyframes reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0 0 0); }
+}

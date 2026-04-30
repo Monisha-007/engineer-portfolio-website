@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0d0d0d"/>
+  <defs>
+    <radialGradient id="glow-rag" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#glow-rag)"/>
+
+  <!-- PDF Documents -->
+  <rect x="20" y="110" width="110" height="150" rx="8" fill="#1c0a00" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="75" y="136" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="11" font-weight="bold">PDF DOCS</text>
+  <rect x="35" y="148" width="80" height="8" rx="2" fill="#f59e0b" opacity="0.35"/>
+  <rect x="35" y="163" width="65" height="8" rx="2" fill="#f59e0b" opacity="0.28"/>
+  <rect x="35" y="178" width="75" height="8" rx="2" fill="#f59e0b" opacity="0.35"/>
+  <rect x="35" y="193" width="50" height="8" rx="2" fill="#f59e0b" opacity="0.22"/>
+  <rect x="35" y="208" width="70" height="8" rx="2" fill="#f59e0b" opacity="0.28"/>
+  <rect x="35" y="223" width="55" height="8" rx="2" fill="#f59e0b" opacity="0.20"/>
+  <text x="75" y="248" text-anchor="middle" fill="#92400e" font-family="monospace" font-size="9">Upload</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="185" x2="158" y2="185" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="158,178 173,185 158,192" fill="#f59e0b"/>
+
+  <!-- Pipeline stages (vertical stack) -->
+  <rect x="173" y="80" width="148" height="220" rx="10" fill="#1c0a00" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="247" y="106" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="11" font-weight="bold">PIPELINE</text>
+  <!-- Step boxes -->
+  <rect x="188" y="115" width="118" height="30" rx="5" fill="#1c0a00" stroke="#f59e0b" stroke-width="1"/>
+  <text x="247" y="135" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="9">① Service Bus Queue</text>
+  <line x1="247" y1="145" x2="247" y2="155" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="188" y="155" width="118" height="30" rx="5" fill="#1c0a00" stroke="#f59e0b" stroke-width="1"/>
+  <text x="247" y="175" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="9">② PDF Chunking</text>
+  <line x1="247" y1="185" x2="247" y2="195" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="188" y="195" width="118" height="30" rx="5" fill="#1c0a00" stroke="#f59e0b" stroke-width="1"/>
+  <text x="247" y="215" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="9">③ Redis Cache</text>
+  <line x1="247" y1="225" x2="247" y2="235" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,2"/>
+  <rect x="188" y="235" width="118" height="30" rx="5" fill="#1c0a00" stroke="#fbbf24" stroke-width="1"/>
+  <text x="247" y="255" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="9">④ Vector Embeddings</text>
+  <text x="247" y="285" text-anchor="middle" fill="#92400e" font-family="monospace" font-size="8">Container App</text>
+
+  <!-- Arrow -->
+  <line x1="321" y1="185" x2="351" y2="185" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="351,178 366,185 351,192" fill="#f59e0b"/>
+
+  <!-- Azure Cognitive Search -->
+  <rect x="366" y="100" width="130" height="170" rx="10" fill="#1c0a00" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="431" y="125" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="10" font-weight="bold">AZURE</text>
+  <text x="431" y="142" text-anchor="middle" fill="#fcd34d" font-family="monospace" font-size="10" font-weight="bold">COGNITIVE SEARCH</text>
+  <text x="431" y="170" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Vector Index</text>
+  <text x="431" y="188" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Semantic Search</text>
+  <text x="431" y="206" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Hybrid Retrieval</text>
+  <text x="431" y="224" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Chunk Scoring</text>
+  <text x="431" y="252" text-anchor="middle" fill="#92400e" font-family="monospace" font-size="8">RAG Knowledge Base</text>
+
+  <!-- Arrow -->
+  <line x1="496" y1="185" x2="526" y2="185" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="526,178 541,185 526,192" fill="#f59e0b"/>
+
+  <!-- Azure OpenAI -->
+  <rect x="541" y="112" width="120" height="146" rx="10" fill="#1c0a00" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="601" y="136" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="10" font-weight="bold">AZURE OPENAI</text>
+  <text x="601" y="160" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">RAG Augmentation</text>
+  <text x="601" y="178" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">LLM Response</text>
+  <text x="601" y="196" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">SSE Streaming</text>
+  <text x="601" y="214" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="9">Context Window</text>
+  <text x="601" y="242" text-anchor="middle" fill="#92400e" font-family="monospace" font-size="8">GPT-4o</text>
+
+  <!-- Arrow -->
+  <line x1="661" y1="185" x2="683" y2="185" stroke="#f59e0b" stroke-width="2"/>
+  <polygon points="683,178 698,185 683,192" fill="#f59e0b"/>
+
+  <!-- React Chat UI -->
+  <rect x="698" y="100" width="86" height="170" rx="10" fill="#1c0a00" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="741" y="122" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="9" font-weight="bold">CHAT UI</text>
+  <!-- Chat bubbles representation -->
+  <rect x="708" y="132" width="66" height="18" rx="9" fill="#fbbf24" opacity="0.25"/>
+  <text x="741" y="145" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="8">User Query</text>
+  <rect x="708" y="158" width="66" height="28" rx="6" fill="#f59e0b" opacity="0.2"/>
+  <text x="741" y="172" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="8">AI Response</text>
+  <text x="741" y="185" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="8">Streaming</text>
+  <text x="741" y="208" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="8">Markdown</text>
+  <text x="741" y="224" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="8">Graph View</text>
+  <text x="741" y="250" text-anchor="middle" fill="#92400e" font-family="monospace" font-size="8">WebSocket</text>
+
+  <text x="400" y="388" text-anchor="middle" fill="#f59e0b" font-family="monospace" font-size="15" opacity="0.9">Product-RAG · AI Document Intelligence Platform</text>
+  <text x="400" y="416" text-anchor="middle" fill="#d97706" font-family="monospace" font-size="10" opacity="0.7">FastAPI · React 18 · Azure OpenAI · Cognitive Search · Service Bus · Redis · Docker · Heroku</text>
+</svg>

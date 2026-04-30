@@ -1,0 +1,283 @@
+@import "../../app.scss";
+
+.freelancer {
+  background: rgba(5, 0, 18, 0.70);
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 80px 0 100px;
+
+  @include mobile {
+    padding: 60px 0 80px;
+  }
+
+  /* Dot-grid background */
+  .dot-grid {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Top / bottom neon edge lines */
+  .edge-glow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    z-index: 1;
+    pointer-events: none;
+
+    &.top {
+      top: 0;
+      background: linear-gradient(90deg, transparent 0%, #8b5cf6 40%, #06b6d4 60%, transparent 100%);
+      opacity: 0.35;
+    }
+    &.bottom {
+      bottom: 0;
+      background: linear-gradient(90deg, transparent 0%, #06b6d4 40%, #8b5cf6 60%, transparent 100%);
+      opacity: 0.35;
+    }
+  }
+
+  /* Content wrapper */
+  .freelancer-content {
+    max-width: min(90%, 1060px);
+    width: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include mobile {
+      gap: 36px;
+      padding: 0 16px;
+    }
+  }
+
+  /* Header */
+  .freelancer-header {
+    text-align: center;
+
+    .available-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(16, 185, 129, 0.45);
+      background: rgba(16, 185, 129, 0.07);
+      color: #10b981;
+      font-size: 12px;
+      font-family: monospace;
+      letter-spacing: 0.5px;
+      margin-bottom: 22px;
+
+      .badge-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #10b981;
+        box-shadow: 0 0 6px #10b981;
+        animation: pulseDot 1.6s ease-in-out infinite;
+      }
+    }
+
+    h1 {
+      font-size: 54px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 16px;
+      line-height: 1.1;
+
+      .h1-accent {
+        background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @include mobile {
+        font-size: 34px;
+      }
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.42);
+      font-size: 16px;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.65;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  /* Grid */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  /* Card wrapper — provides perspective */
+  .card-wrapper {
+    perspective: 900px;
+  }
+
+  /* 3D Card */
+  .freelance-card {
+    background: #080808;
+    border-radius: 20px;
+    padding: 36px 30px 32px;
+    position: relative;
+    cursor: default;
+    transform-style: preserve-3d;
+    overflow: hidden;
+    transition: box-shadow 0.35s ease;
+    will-change: transform;
+
+    @include mobile {
+      padding: 26px 20px 24px;
+    }
+
+    /* Ambient glow layer */
+    .card-ambient {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    /* Floating emoji */
+    .card-icon {
+      font-size: 46px;
+      display: block;
+      margin-bottom: 22px;
+      position: relative;
+      z-index: 1;
+      line-height: 1;
+    }
+
+    /* Role + year */
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+
+      .card-role {
+        font-size: 11px;
+        font-family: monospace;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+      }
+
+      .card-year {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.28);
+        font-family: monospace;
+      }
+    }
+
+    /* Title */
+    .card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: white;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+
+      @include mobile {
+        font-size: 19px;
+      }
+    }
+
+    /* Accent divider */
+    .card-divider {
+      height: 2px;
+      width: 100%;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      transform-origin: left;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Description */
+    .card-desc {
+      color: rgba(255, 255, 255, 0.46);
+      font-size: 14px;
+      line-height: 1.68;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tags */
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      position: relative;
+      z-index: 1;
+
+      .tag {
+        font-size: 11px;
+        font-family: monospace;
+        padding: 4px 11px;
+        border-radius: 6px;
+        border: 1px solid;
+        letter-spacing: 0.3px;
+        transition: opacity 0.2s;
+      }
+    }
+
+    /* Corner "Freelance" badge */
+    .card-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      font-size: 10px;
+      font-family: monospace;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 5px;
+      z-index: 2;
+    }
+  }
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 6px #10b981;
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.75);
+    box-shadow: 0 0 2px #10b981;
+  }
+}

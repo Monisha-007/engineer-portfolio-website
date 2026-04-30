@@ -1,0 +1,195 @@
+@import "../../app.scss";
+
+.about {
+  /* Transparent so fixed AI background shows through */
+  background: rgba(5, 0, 18, 0.70);
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 0 80px;
+
+  @include mobile {
+    padding: 24px 0 60px;
+  }
+
+  .content {
+    text-align: center;
+    max-width: min(86%, 1366px);
+    color: white;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    @include mobile {
+      padding: 0 16px;
+      max-width: 100%;
+    }
+
+    h1 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, #a78bfa 0%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+      @include mobile { font-size: 28px; margin-bottom: 8px; }
+    }
+
+    p {
+      margin-bottom: 16px;
+      text-align: center;
+      font-size: 15.5px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.7;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+
+      b { color: rgba(255, 255, 255, 0.82); font-weight: 600; }
+
+      @include mobile { font-size: 13.5px; }
+    }
+
+    .technologies {
+      margin-top: 28px;
+
+      h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+
+        @include mobile { font-size: 20px; margin-bottom: 12px; }
+      }
+
+      /* No overflow-y scroll — just wrap naturally */
+      .groups {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        /* REMOVED: max-height, overflow-y */
+
+        @include mobile {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+
+        /* Glassmorphism skill cards */
+        .category {
+          width: 310px;
+          padding: 16px 18px;
+          background: rgba(124, 58, 237, 0.07);
+          border-radius: 16px;
+          border: 1px solid rgba(124, 58, 237, 0.25);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+          transition: all 0.3s ease;
+          text-align: left;
+
+          &:hover {
+            background: rgba(124, 58, 237, 0.13);
+            border-color: rgba(124, 58, 237, 0.48);
+            box-shadow: 0 0 32px rgba(124, 58, 237, 0.12), 0 8px 32px rgba(0, 0, 0, 0.35);
+            transform: translateY(-4px);
+          }
+
+          @include tablet { width: 272px; padding: 12px 14px; }
+          @include mobile {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 12px;
+            &:hover { transform: none; }
+          }
+
+          .category-name {
+            font-size: 11px;
+            font-weight: 700;
+            color: #a78bfa;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+            font-family: "Courier New", monospace;
+
+            @include mobile { font-size: 10px; }
+          }
+
+          .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: flex-start;
+
+            @include mobile { gap: 4px; }
+          }
+
+          .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            transition: all 0.2s;
+            cursor: default;
+
+            &:hover {
+              background: rgba(124, 58, 237, 0.14);
+              border-color: rgba(124, 58, 237, 0.38);
+            }
+
+            @include mobile { padding: 4px 8px; }
+
+            .tech-logo {
+              width: 20px;
+              height: 20px;
+              object-fit: contain;
+
+              @include mobile { width: 14px; height: 14px; }
+            }
+
+            .tech-name {
+              font-size: 13px;
+              color: rgba(255, 255, 255, 0.75);
+
+              @include mobile { font-size: 11px; }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .slidingTextContainer {
+    position: absolute;
+    opacity: 1;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.03);
+    width: 50%;
+    rotate: -25deg;
+    font-weight: bold;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+    inset: 0;
+    z-index: 0;
+
+    @include mobile {
+      right: -10%;
+      left: auto;
+      top: 35%;
+      width: auto;
+      rotate: -20deg;
+    }
+
+    .top  { font-size: 20vh; margin-left: 500px; @include mobile { font-size: 10vh; margin-left: 0; } }
+    .bottom { font-size: 50vh; @include mobile { font-size: 20vh; } }
+  }
+}

@@ -1,0 +1,148 @@
+@mixin mobile {
+  @media (max-width: 738px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: #050012;
+  color: #e2e8f0;
+  overflow-x: hidden;
+
+  /* AI circuit board pattern overlay */
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cdefs%3E%3Cpattern id='circuit' x='0' y='0' width='120' height='120' patternUnits='userSpaceOnUse'%3E%3Cg fill='none' stroke='rgba(124,58,237,0.09)' stroke-width='0.7'%3E%3Cline x1='0' y1='40' x2='40' y2='40'/%3E%3Cline x1='40' y1='40' x2='40' y2='0'/%3E%3Cline x1='80' y1='40' x2='120' y2='40'/%3E%3Cline x1='80' y1='40' x2='80' y2='80'/%3E%3Cline x1='40' y1='80' x2='80' y2='80'/%3E%3Cline x1='40' y1='80' x2='40' y2='120'/%3E%3Cline x1='0' y1='80' x2='0' y2='80'/%3E%3Cline x1='120' y1='0' x2='120' y2='40'/%3E%3C/g%3E%3Ccircle cx='40' cy='40' r='3' fill='rgba(124,58,237,0.14)' stroke='none'/%3E%3Ccircle cx='80' cy='80' r='3' fill='rgba(6,182,212,0.14)' stroke='none'/%3E%3Ccircle cx='80' cy='40' r='2' fill='rgba(236,72,153,0.12)' stroke='none'/%3E%3Ccircle cx='40' cy='80' r='2' fill='rgba(124,58,237,0.1)' stroke='none'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='120' height='120' fill='url(%23circuit)'/%3E%3C/svg%3E");
+    opacity: 1;
+  }
+}
+
+.app-root {
+  width: 100%;
+  overflow-x: hidden;
+  background: #050012;
+}
+
+.page-content {
+  will-change: transform;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+
+  @include tablet {
+    scroll-snap-type: none;
+  }
+
+  @include mobile {
+    scroll-snap-type: none;
+  }
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+
+  /* About has too much content for single viewport — allow natural height */
+  &#About {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    scroll-snap-align: none;
+  }
+
+  &#Experience {
+    overflow: visible;
+  }
+
+  &#Contact {
+    height: auto;
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+
+  &#Portfolio {
+    height: auto;
+    min-height: auto;
+    scroll-snap-align: none;
+  }
+
+  @include tablet {
+    height: auto;
+    min-height: 100vh;
+    scroll-snap-align: none;
+
+    &#About {
+      height: auto;
+      overflow: visible;
+    }
+
+    &#Experience {
+      height: auto;
+      min-height: 100vh;
+    }
+  }
+
+  @include mobile {
+    height: auto;
+    min-height: 100vh;
+    scroll-snap-align: none;
+
+    &#Contact {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+/* ─── GLOBAL SCROLLBAR ─── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050012;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.5);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(124, 58, 237, 0.8);
+}
+
+/* ─── SELECTION COLOR ─── */
+::selection {
+  background: rgba(124, 58, 237, 0.4);
+  color: #f3f4f6;
+}

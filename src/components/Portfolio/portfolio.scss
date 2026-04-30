@@ -1,0 +1,270 @@
+@import "../../app.scss";
+
+.portfolio-ai {
+  position: relative;
+  z-index: 1;
+  background: rgba(5, 0, 18, 0.70);
+
+  /* ── STICKY HEADER ── */
+  .portfolio-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    text-align: center;
+    padding: 22px 20px 0;
+    background: rgba(5, 0, 18, 0.70);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(124, 58, 237, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+    @include mobile { padding: 14px 16px 0; }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 3.5px;
+      color: #7c3aed;
+      font-family: "Courier New", monospace;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      font-size: 40px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #a78bfa 0%, #67e8f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+
+      @include mobile { font-size: 26px; }
+    }
+
+    .progress-bar {
+      height: 2px;
+      background: linear-gradient(90deg, #7c3aed, #06b6d4, #ec4899, #7c3aed);
+      background-size: 200% 100%;
+      transform-origin: left;
+      border-radius: 999px;
+      animation: barShimmer 3s linear infinite;
+    }
+  }
+
+  /* ── PROJECT ROW ── */
+  .proj-row {
+    padding: 36px 0;
+    position: relative;
+
+    @include mobile { padding: 24px 0 16px; }
+
+    /* Animated top separator line */
+    .glow-line {
+      height: 1px;
+      width: 100%;
+      transform-origin: left;
+      margin-bottom: 32px;
+      opacity: 0.6;
+
+      @include mobile { margin-bottom: 18px; }
+    }
+  }
+
+  .proj-inner {
+    max-width: min(88%, 1300px);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    perspective: 1400px;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 20px;
+      max-width: 100%;
+      padding: 0 14px;
+    }
+  }
+
+  /* ── IMAGE COLUMN ── */
+  .proj-img-col {
+    flex: 1;
+    perspective: 1400px;
+
+    @include mobile { width: 100%; }
+  }
+
+  .img-tilt {
+    width: 100%;
+  }
+
+  .img-card-shell {
+    position: relative;
+    border-radius: 18px;
+    border: 1.5px solid;
+    overflow: hidden;
+    background: rgba(5, 0, 18, 0.7);
+    backdrop-filter: blur(10px);
+    transition: box-shadow 0.4s;
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      filter: saturate(1.08) brightness(0.96);
+      transition: transform 0.5s ease, filter 0.4s;
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+      filter: saturate(1.15) brightness(1.02);
+    }
+
+    /* Scan-line sweep on hover */
+    .img-scan {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(124, 58, 237, 0.07) 48%,
+        transparent 100%
+      );
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      animation: scanSweep 3s linear infinite;
+    }
+
+    &:hover .img-scan { opacity: 1; }
+
+    /* Corner bracket decorations */
+    .bracket {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border: 2px solid;
+      z-index: 5;
+      transition: width 0.3s, height 0.3s;
+    }
+    .tl { top: 10px; left: 10px;  border-right: none; border-bottom: none; }
+    .tr { top: 10px; right: 10px; border-left: none;  border-bottom: none; }
+    .bl { bottom: 10px; left: 10px;  border-right: none; border-top: none; }
+    .br { bottom: 10px; right: 10px; border-left: none;  border-top: none; }
+
+    &:hover .bracket {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* Floating project tag */
+    .img-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      padding: 5px 13px;
+      border-radius: 999px;
+      border: 1px solid;
+      font-size: 10.5px;
+      font-family: "Courier New", monospace;
+      letter-spacing: 1.5px;
+      backdrop-filter: blur(10px);
+      font-weight: 600;
+      z-index: 5;
+      animation: tagFloat 3s ease-in-out infinite alternate;
+    }
+  }
+
+  /* ── TEXT COLUMN ── */
+  .proj-text-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile {
+      align-items: center;
+      text-align: center;
+    }
+
+    .proj-num {
+      font-size: 12px;
+      font-family: "Courier New", monospace;
+      letter-spacing: 3px;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+
+    h2 {
+      font-size: 27px;
+      font-weight: 700;
+      line-height: 1.32;
+      color: rgba(255, 255, 255, 0.95);
+
+      @include mobile { font-size: 20px; }
+    }
+
+    p {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.46);
+
+      @include mobile { font-size: 13px; }
+    }
+
+    /* Tech pills */
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+
+      @include mobile { justify-content: center; }
+
+      .tech-pill {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 7px 14px;
+        background: rgba(124, 58, 237, 0.06);
+        border: 1px solid;
+        border-radius: 10px;
+        font-size: 12.5px;
+        color: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(6px);
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+        cursor: default;
+
+        &:hover {
+          background: rgba(124, 58, 237, 0.14);
+          color: #c4b5fd;
+          box-shadow: 0 0 16px rgba(124, 58, 237, 0.2);
+        }
+
+        img {
+          width: 17px;
+          height: 17px;
+          object-fit: contain;
+
+          @include mobile { width: 13px; height: 13px; }
+        }
+
+        @include mobile { padding: 5px 10px; font-size: 11px; }
+      }
+    }
+  }
+}
+
+/* ── Keyframes ── */
+@keyframes barShimmer {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes scanSweep {
+  0%   { background-position: 0 -100%; }
+  100% { background-position: 0 200%; }
+}
+
+@keyframes tagFloat {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
+}
