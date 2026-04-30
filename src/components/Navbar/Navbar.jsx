@@ -55,6 +55,18 @@ const Navbar = () => {
           >
             LinkedIn ↗
           </motion.a>
+          <motion.a
+            href="https://github.com/Monisha-007"
+            target="_blank"
+            rel="noreferrer"
+            className="github-nav-btn"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.7 }}
+            whileHover={{ scale: 1.07, boxShadow: "0 0 20px rgba(124,58,237,0.4)" }}
+          >
+            GitHub ↗
+          </motion.a>
         </div>
       </div>
     </motion.div>

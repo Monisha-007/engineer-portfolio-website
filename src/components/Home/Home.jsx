@@ -279,19 +279,6 @@ const Home = () => {
                 Hire Me
               </motion.button>
             </a>
-            <a
-              href="https://linkedin.com/in/monisha-r27"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <motion.button
-                className="btn-ghost"
-                whileHover={{ scale: 1.06 }}
-                whileTap={{ scale: 0.96 }}
-              >
-                LinkedIn ↗
-              </motion.button>
-            </a>
           </motion.div>
 
         </motion.div>
